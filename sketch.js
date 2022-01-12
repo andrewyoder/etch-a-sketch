@@ -1,6 +1,7 @@
 const MAX_GRIDSIZE = 100;
 const MIN_GRIDSIZE = 4;
 let curColor = '#000000'; // black by default
+// let traceFlag = false;
 
 /* TODO: make "rainbow" function work" */
 
@@ -23,6 +24,9 @@ function create_grid(gridSize = 16) {
                 // if (curColor == 'rainbow') {
                 //     e.target.style.backGroundColor = get_random_color();
                 //     console.log(e.target.style.backGroundColor);
+                // }
+                // if (traceFlag == true) {
+                //     e.target.style.filter = 'brightness(90%)';
                 // }
                 // else {
                     e.target.style.backgroundColor = curColor;
@@ -55,27 +59,43 @@ function clear_grid() {
  * Set up event listeners for the buttons
  */
 function activate_buttons() {
+    // Reset Button
     const resetBtn = document.querySelector('#resetBtn');
     resetBtn.addEventListener('click', (e) => {
         clear_grid();
+        
         gridSize = prompt('How big should the new grid be?');
         gridSize = (gridSize <= MAX_GRIDSIZE) ? gridSize : MAX_GRIDSIZE;
+        gridSize = (gridSize >= MIN_GRIDSIZE) ? gridSzie : MIN_GRIDSIZE;
+        
         create_grid(+gridSize);
     });
 
+    // color selector buttons
     const cntrlBtns = document.querySelector('.cntrlBtns');
     cntrlBtns.addEventListener('click', (e) => {
+
         let oldSelected = cntrlBtns.querySelector('.selected');
         oldSelected.classList.remove('selected');
         e.target.classList.add('selected');
+        
         let newSelected = e.target.id;
+        traceFlag = false;
+        
         switch(newSelected) {
             // case 'rainbowBtn':
             //     curColor = 'rainbow';
             //     break;
+            case 'inputBtn':
+                curColor = prompt('Select a color', '#FF0000');
+                if (!curColor) curColor = '#FF0000';
+                curColor = curColor.padStart(6, 0);
+                break;
             case 'randomBtn':
                 curColor = get_random_color();
                 break;
+            // case 'traceBtn':
+            //     traceFlag = true;
             case 'blackBtn':
             default:
                 curColor = '#000000';
@@ -102,7 +122,6 @@ function get_random_color() {
 function init_grid() {
     create_grid();
     activate_buttons();
-    // console.log(get_random_color());
 }
 
 

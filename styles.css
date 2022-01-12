@@ -10,7 +10,7 @@
     width: 15vh;
     height: inherit;
     align-items: center;
-    padding-top: 25%;
+    padding-top: 30%;
     transform: translateY(-50%);
 }
 
@@ -20,7 +20,7 @@
     margin: auto;
     margin-bottom: 2vh;
     /* padding-top: 15%; */
-    /* transform: translateY(-10%); */
+    transform: translateY(-15%);
 }
 
 /* BUTTON PROPERTIES */
@@ -55,6 +55,11 @@ button {
     color: white;
 }
 
+#inputBtn {
+    background-color: cornflowerblue;
+    color: white;
+}
+
 .selected {
     border-width: 4px;
     border-color: yellow;
@@ -82,4 +87,8 @@ button {
     /* align-items: stretch; */
     justify-content: center;
 }
+
+/* .trace {
+    filter: brightness(90%);
+} */
 
