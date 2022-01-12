@@ -1,0 +1,85 @@
+/* COLUMNS FOR BUTTONS AND GRID */
+
+/* TODO: make cell height equal to cell width */
+
+.container {
+    display: flex;
+}
+
+.btnContainer {
+    width: 15vh;
+    height: inherit;
+    align-items: center;
+    padding-top: 25%;
+    transform: translateY(-50%);
+}
+
+.gridContainer {
+    width: 70vw;
+    height: 90vh;
+    margin: auto;
+    margin-bottom: 2vh;
+    /* padding-top: 15%; */
+    /* transform: translateY(-10%); */
+}
+
+/* BUTTON PROPERTIES */
+
+button {
+    width: 10vw;
+    height: 7vh;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    display: block;
+    margin: 5vh;
+}
+
+#resetBtn {
+    background-color: white;
+    color: red;
+    font-weight: bold;
+}
+
+#blackBtn {
+    background-color: black;
+    color: white;
+}
+
+#rainbowBtn {
+    background-color: crimson;
+    color: white;
+}
+
+#randomBtn {
+    background-color: blueviolet;
+    color: white;
+}
+
+.selected {
+    border-width: 4px;
+    border-color: yellow;
+    opacity: 70%;
+}
+
+/* CELL ATTRIBUTES */
+/* TODO: make cells grow to fill page */
+.cell {
+    min-width: 4px;
+    min-height: 4px;
+    border: 1px solid black;
+    display: flex;
+    flex: 1 1 0;
+    justify-items: center;
+    /* align-items: stretch; */
+}
+
+.row {
+    /* padding-top: 100%; */
+    width: inherit;
+    box-sizing: border-box;
+    display: flex;
+    /* flex: 1 1 auto; */
+    /* align-items: stretch; */
+    justify-content: center;
+}
+
