@@ -11,7 +11,7 @@ This project is for practice using event handlers to manipulate
 DOM elements.
 
 TO-DO:
-  - make all cells the same height as they are width
+  - make all cells the same height as they are width (look into CSS grids)
   - add a "rainbow" button that sets each new cell to a random color
   - add a "trace" button that will darken each cell by 10% each time
     it is passed over
